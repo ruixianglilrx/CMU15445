@@ -28,18 +28,6 @@ auto LRUKReplacer::Evict(frame_id_t *frame_id) -> bool {
       continue;
     }
 
-    // if (it.second.record_nums_ < k_ && it.second.records_->front() < min_timestamp ) {
-    //     flag=true;
-    //     result = it.first;
-    //     min_timestamp=it.second.records_->front();
-    // } else {
-    //     size_t tmp = it.second.records_->front() - it.second.records_->back();
-    //     if (tmp > max_distance) {
-    //         flag=true;
-    //         max_distance = tmp;
-    //         result = it.first;
-    //     }
-    // }
     if (it.second.record_nums_ < k_) {
       if (it.second.record_nums_ < min_record_nums) {
         flag = true;
